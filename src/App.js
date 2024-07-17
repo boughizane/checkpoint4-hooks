@@ -1,25 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './compo/Nav';
+import List from './compo/List';
+import { useState } from 'react';
+
 
 function App() {
+  const [search, setsearch] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <Nav setsearch={setsearch}/>
+      <List search={search}/>
     </div>
-  );
+  )
 }
 
 export default App;
