@@ -2,16 +2,24 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './compo/Nav';
 import List from './compo/List';
-import { useState } from 'react';
+import About from './About';
+import { Routes,Route} from 'react-router-dom';
+import Login from './compo/Login';
+import Houme from './compo/Houme';
 
 
 function App() {
-  const [search, setsearch] = useState("")
+ 
   return (
     
     <div>
-      <Nav setsearch={setsearch}/>
-      <List search={search}/>
+       
+       <Routes>
+        <Route path='/' element={<Login/>} />
+       <Route  path='/Houme' element={<Houme/>}/>
+
+       </Routes>
+     
     </div>
   )
 }
